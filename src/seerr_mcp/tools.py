@@ -133,10 +133,11 @@ TOOLS: list[ToolSpec] = [
     # ── write ───────────────────────────────────────────────────────────
     _tool(
         "request",
-        "Request a movie, or a show (every season unless seasons lists some), for the library. Only when the "
-        "person asked for it: the request is approved at once and Radarr or Sonarr start searching and "
-        "downloading. Refused with already_requested when Seerr has it (or those seasons) already; get_title "
-        "shows what exists.",
+        "DOWNLOADS. Request a movie or a show for the library. This server acts as Seerr's admin, so the request "
+        "is approved immediately, with no one reviewing it, and Radarr or Sonarr start searching the indexers "
+        "and downloading straight away. For a show, leaving out seasons requests EVERY season; pass seasons to "
+        "ask for fewer. Call it only when the person asked for this title to be downloaded. Refused with "
+        "already_requested when Seerr has it (or those seasons) already; get_title shows what exists.",
         _schema(
             {
                 "type": TYPE,
@@ -161,8 +162,10 @@ TOOLS: list[ToolSpec] = [
     ),
     _tool(
         "cancel_request",
-        "Delete a request (a request_id from list_requests or get_title). What was already downloaded stays; "
-        "nothing more is fetched for it. Cannot be undone, only requested again.",
+        "Permanently delete a request (a request_id from list_requests or get_title). This server acts as "
+        "Seerr's admin, so it can cancel ANYONE's request, not only this person's: check requested_by and "
+        "cancel only what the person asked to cancel. What was already downloaded stays; nothing more is "
+        "fetched for it. It cannot be undone, only requested again.",
         _schema({"request_id": {"type": "integer", "minimum": 1}}, ["request_id"]),
         _ann("Cancel a request", read_only=False, destructive=True, idempotent=True),
         lambda s, a: s.cancel_request(a),

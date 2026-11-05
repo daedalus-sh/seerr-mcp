@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "seerr-mcp"
-version = "0.1.0"
+version = "0.2.0"
 description = "MCP server for Seerr: search, see what is in the library and on its way, request movies and shows, report problems"
 readme = "README.md"
 license = "MIT"

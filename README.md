@@ -28,8 +28,8 @@ Write
 
 | Tool | |
 |---|---|
-| `request` | A movie, or a show (every season, or the ones named). |
-| `cancel_request` | Delete a request. Destructive. |
+| `request` | **Downloads.** A movie, or a show (every season unless seasons are named). Approved at once, as the admin: Radarr or Sonarr start downloading straight away. |
+| `cancel_request` | Delete a request: anyone's, since the key is the admin's. Destructive; cannot be undone. |
 | `report_issue` | A problem with a title's file, with a message, and a season and episode for a show. |
 
 Annotations are honest: `readOnlyHint` on reads; `openWorldHint` on

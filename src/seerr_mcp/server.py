@@ -47,6 +47,11 @@ processing needs no request), then request once. To track what was watched
 and what was thought of it, there is another tool (Ryot); this one is about
 getting a title into the house.
 
+This server acts as Seerr's admin. request downloads: it is approved at once
+and Radarr or Sonarr fetch the title straight away (for a show, every season
+unless seasons says otherwise). cancel_request can cancel anyone's request,
+so check requested_by first.
+
 Errors come back as {"error": <kind>, "message": ...}. already_requested
 means Seerr has it already: get_title says its state. seerr_unavailable means
 Seerr did not answer: try again later rather than working around it.
