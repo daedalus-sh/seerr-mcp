@@ -41,7 +41,7 @@ python3Packages.buildPythonApplication {
 
   meta = {
     description = "MCP server for Seerr: search, see what is in the library and on its way, request movies and shows, report problems";
-    homepage = "https://github.com/santiagotoscanini/seerr-mcp";
+    homepage = "https://github.com/daedalus-sh/seerr-mcp";
     license = lib.licenses.mit;
     mainProgram = "seerr-mcp";
     platforms = lib.platforms.linux;

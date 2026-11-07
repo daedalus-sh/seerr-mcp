@@ -51,7 +51,7 @@ Annotations are honest: `readOnlyHint` on reads; `openWorldHint` on
 ## Run
 
 ```
-nix run github:santiagotoscanini/seerr-mcp
+nix run github:daedalus-sh/seerr-mcp
 ```
 
 or install the package (`pip install .`, Python 3.12+) and run `seerr-mcp`.
